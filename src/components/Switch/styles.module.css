@@ -1,0 +1,23 @@
+.switch {
+    --button-h: calc(1rem + 4px);
+    --switch-h: calc(var(--button-h) + 4px);
+    --switch-w: calc(2 * var(--switch-h));
+    
+    display: flex;
+    flex-direction: row;
+    height: var(--switch-h);
+    border-radius: calc(var(--switch-h) / 2);
+    cursor: pointer;
+    background: gray;
+    font-size: calc(1rem - 2px);
+}
+
+.switchButton {
+    height: var(--button-h);
+    border-radius: calc(var(--button-h) / 2);
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    vertical-align: middle;
+    flex: 1;
+}

@@ -1,0 +1,16 @@
+export { default as ArrowIcon } from "./Arrow";
+export { default as CloseIcon } from "./Close";
+export { default as CopyIcon } from "./Copy";
+export { default as DeleteIcon } from "./Delete";
+export { default as EditIcon } from "./Edit";
+export { default as EyeCloseIcon } from "./EyeClose";
+export { default as EyeOpenIcon } from "./EyeOpen";
+export { default as FileIcon } from "./File";
+export { default as HeartIcon } from "./Heart";
+export { default as HomeIcon } from "./Home";
+export { default as LoaderIcon } from "./Loader";
+export { default as LockIcon } from "./Lock";
+export { default as ResetIcon } from "./Reset";
+export { default as SearchIcon } from "./Search";
+export { default as SuccessIcon } from "./Success";
+export { default as UnlockIcon } from "./Unlock";
