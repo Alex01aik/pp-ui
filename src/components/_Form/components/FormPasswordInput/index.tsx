@@ -1,5 +1,5 @@
 import { SVGProps } from "react";
-import PasswordInput from "@/components/input/PasswordInput";
+import PasswordInput from "@/components/Input/PasswordInput";
 import FormErrorMessage from "../FormErrorMessage";
 import { Controller, useFormContext } from "react-hook-form";
 import styles from "./styles.module.css";

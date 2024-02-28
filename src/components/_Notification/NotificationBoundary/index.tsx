@@ -6,10 +6,10 @@ import Close from "@/icons/Close";
 const NotificationBoundary: React.FC = () => {
   const notificationManager = useNotification();
   const [timerKeys, setTimerKeys] = useState<
-    { key: string; timerKey: NodeJS.Timeout }[]
+    { key: string; timerKey: Number }[]
   >([]);
   const [hideAnimationKeys, setHideAnimationKeys] = useState<
-    { key: string; timerKey: NodeJS.Timeout }[]
+    { key: string; timerKey: Number }[]
   >([]);
   const [showAnimationKeys, setShowAnimationKeys] = useState<string[]>([]);
 

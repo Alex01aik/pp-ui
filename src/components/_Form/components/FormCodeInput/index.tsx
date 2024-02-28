@@ -1,4 +1,4 @@
-import CodeInput, { CodeInputProps } from "@/components/input/CodeInput";
+import CodeInput, { CodeInputProps } from "@/components/Input/CodeInput";
 import FormErrorMessage from "../FormErrorMessage";
 import { Controller, useFormContext } from "react-hook-form";
 import styles from "./styles.module.css";
