@@ -1,26 +1,20 @@
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { resolve } from "path";
 import dts from "vite-plugin-dts";
-import { peerDependencies } from "./package.json";
-import path from "path";
+import { libInjectCss } from "vite-plugin-lib-inject-css";
 
 export default defineConfig({
+  plugins: [react(), libInjectCss(), dts({ include: ["lib"] })],
   build: {
     lib: {
-      entry: "./src/index.ts",
-      name: "vite-react-ts-button",
+      entry: resolve(__dirname, "lib/index.ts"),
       fileName: (format) => `index.${format}.js`,
-      formats: ["cjs", "es"],
+      formats: ["es", "cjs"],
     },
+    copyPublicDir: false,
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)],
-    },
-    sourcemap: true,
-    emptyOutDir: true,
-  },
-  plugins: [dts()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
+      external: ["react", "react/jsx-runtime"],
     },
   },
 });
