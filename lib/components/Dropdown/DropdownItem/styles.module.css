@@ -1,0 +1,17 @@
+.dropdownItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+
+.dropdownItem:hover {
+    background: gray;
+}
+
+.dropdownDropArrow {
+    height: 0.6rem;
+    width: auto;
+    margin-left: auto;
+}

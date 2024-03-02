@@ -21,7 +21,11 @@
     "noFallthroughCasesInSwitch": true,
 
     /* */ 
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["lib/*"]
+    }
   },
   "include": ["src", "lib"],
   "references": [{ "path": "./tsconfig.node.json" }]

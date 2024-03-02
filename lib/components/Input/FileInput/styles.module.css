@@ -1,0 +1,130 @@
+.fileInputWrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.fileInputWrapper .fileInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: none;
+}
+
+.fileInputWrapper .fileImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 2px;
+    width: 72px;
+    height: 72px;
+    overflow: hidden;
+}
+
+.fileInputs {
+    flex: auto;
+}
+
+.fileInputLabel input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.fileInputLabel {
+    display: flex;
+    height: 2rem;
+    border: 1px solid gray;
+    border-radius: 2px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.fileInputLabel:hover {
+    opacity: 0.8;
+}
+
+.fileInputLabel:active {
+    opacity: 0.7;
+}
+
+.fileInputs .fileInputTitle {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.fileInput {
+    display: none;
+}
+
+.imageForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px dotted gray;
+    border-radius: 2px;
+    padding: 8px 16px;
+    width: fit-content;
+    height: fit-content;
+    min-height: 98px;
+    min-width: 124px;
+}
+
+.onlyImageForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dotted gray;
+    border-radius: 2px;
+    padding: 8px 16px;
+    width: 100%;
+    height: fit-content;
+    min-height: 98px;
+    min-width: 124px;
+}
+
+.imageForm:hover {
+    opacity: 0.8;
+}
+
+.imageForm:active {
+    opacity: 0.7;
+}
+
+.onlyImageSrc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.allFileLabel {
+    height: 2rem;
+    border: 1px solid gray;
+    border-radius: 2px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: lightgray;
+}
+
+.allFileLabel:hover {
+    opacity: 0.8;
+}
+
+.allFileLabel:active {
+    opacity: 0.7;
+}
+
+.allFile {
+    display: none;
+}

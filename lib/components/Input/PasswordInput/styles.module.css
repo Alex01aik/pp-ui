@@ -1,0 +1,30 @@
+.passwordInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 0.5rem 12px;
+}
+
+.passwordInput > input[type=password] {
+    letter-spacing: 2px;
+    color: gray;
+}
+
+
+.passwordInput > input {
+    font-size: 1rem;
+    font-weight: lighter;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.eye {
+    cursor: pointer;
+    height: 1rem;
+    width: auto;
+}

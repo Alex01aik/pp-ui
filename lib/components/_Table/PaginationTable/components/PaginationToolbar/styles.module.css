@@ -1,0 +1,55 @@
+.paginationBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.pageButton {
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 2px;
+    min-width: 2rem;
+    min-height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: gainsboro; 
+}
+
+.activeButton {
+    background: gray;
+}
+
+.pageButton:hover {
+    opacity: 0.8;
+}
+
+.pageButton:active {
+    opacity: 0.7;
+}
+
+.arrowIcon {
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+}
+
+.arrowIcon:hover {
+    opacity: 0.8;
+}
+
+.arrowIcon:active {
+    opacity: 0.7;
+}
+
+.leftArrow {
+    transform: rotate(90deg);
+}
+
+.rightArrow {
+    transform: rotate(-90deg);
+}

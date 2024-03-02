@@ -1,0 +1,25 @@
+.tableRow {
+    cursor: pointer;
+    background: var(--body-bg-color);
+    border-bottom: 1px solid var(--header-bg-color);
+}
+
+.tableRow:hover {
+    opacity: 0.8;
+}
+
+.tableRow:active {
+    opacity: 0.7;
+}
+
+.tableCell {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.additionRow {
+    display: flex;
+    width: 100%;
+    background: var(--body-bg-color);
+    border-bottom: 1px solid var(--header-bg-color);
+}
