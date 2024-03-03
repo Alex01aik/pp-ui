@@ -1,11 +1,5 @@
 :root {
     --font-size: 16px;
-    --bg-color: white;
-    --header-bg-color: gray;
-    --body-bg-color: gainsboro;
-    --text-color: black;
-    --button-bg-color: lightgray;
-    --border-color: gray;
 }
 
 * {
