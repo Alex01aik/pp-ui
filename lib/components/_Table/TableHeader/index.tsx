@@ -1,6 +1,5 @@
 import { TableHeaderProps } from "./props";
 import TableHeaderTitle from "../TableHeaderTitle";
-import "@/styles.css";
 
 const TableHeader: React.FC<TableHeaderProps> = ({
   titles,

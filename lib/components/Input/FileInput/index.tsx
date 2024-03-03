@@ -2,7 +2,6 @@ import { ChangeEvent, SVGProps, useState } from "react";
 import File from "@/icons/File";
 import styles from "./styles.module.css";
 import TextInput, { TextInputProps } from "../TextInput";
-import "@/styles.css";
 
 export enum FileInputType {
   ALL_FILES = "ALL_FILES",

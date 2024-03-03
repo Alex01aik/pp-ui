@@ -1,7 +1,6 @@
 import { SVGProps } from "react";
-import styles from "./styles.module.css";
 import LoaderIcon from "@/icons/Loader";
-import "@/styles.css";
+import styles from "./styles.module.css";
 
 export type LoaderProps = SVGProps<SVGSVGElement> & {};
 

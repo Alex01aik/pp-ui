@@ -1,7 +1,6 @@
 import Table from "../Table";
 import PaginationToolbar from "./components/PaginationToolbar";
 import { PaginationTableProps } from "./props";
-import "@/styles.css";
 
 const PaginationTable: React.FC<PaginationTableProps> = ({
   wrapperProps,

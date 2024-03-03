@@ -2,7 +2,6 @@ import { useState } from "react";
 import Arrow from "@/icons/Arrow";
 import { PaginationToolbarProps } from "./props";
 import styles from "./styles.module.css";
-import "@/styles.css";
 
 const PaginationToolbar: React.FC<PaginationToolbarProps> = ({
   total = 1,

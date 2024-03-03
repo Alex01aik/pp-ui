@@ -1,8 +1,7 @@
 import { PropsWithChildren, createContext, useState } from "react";
 import { ThemeContextType } from "../types/ThemeContextType";
-import "./styles.css";
 import { Theme } from "../types/Theme";
-import "@/styles.css";
+import "./styles.css";
 
 export const ThemeContext = createContext<ThemeContextType<any> | undefined>(
   undefined

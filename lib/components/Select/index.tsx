@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Close from "@/icons/Close";
 import Dropdown from "../Dropdown";
 import styles from "./styles.module.css";
-import "@/styles.css";
 
 export type OptionType = {
   value: string;

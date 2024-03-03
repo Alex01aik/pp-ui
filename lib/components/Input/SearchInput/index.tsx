@@ -1,7 +1,6 @@
 import { SVGProps } from "react";
 import SearchIcon from "@/icons/Search";
 import styles from "./styles.module.css";
-import "@/styles.css";
 
 export type SearchInputProps = {
   iconProps?: SVGProps<SVGSVGElement>;

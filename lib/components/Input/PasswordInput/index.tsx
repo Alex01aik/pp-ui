@@ -3,7 +3,6 @@ import EyeClose from "@/icons/EyeClose";
 import EyeOpen from "@/icons/EyeOpen";
 import styles from "./styles.module.css";
 import TextInput, { TextInputProps } from "../TextInput";
-import "@/styles.css";
 
 export type PasswordInputProps = {
   iconProps?: SVGProps<SVGSVGElement>;

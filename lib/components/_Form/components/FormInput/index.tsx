@@ -2,7 +2,6 @@ import FormErrorMessage from "../FormErrorMessage";
 import { Controller, useFormContext } from "react-hook-form";
 import styles from "./styles.module.css";
 import TextInput, { TextInputProps } from "@/components/Input/TextInput";
-import "@/styles.css";
 
 export type FormInputProps = {
   name: string;

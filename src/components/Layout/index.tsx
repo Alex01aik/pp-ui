@@ -53,7 +53,9 @@ const mockOptions: OptionType[] = [
 const Layout: React.FC<PropsWithChildren> = ({ children, ...props }) => {
   return (
     <div {...props} className={styles.layout}>
-      <header className={styles.header}>{/* <ThemeSwitch /> */}</header>
+      <header className={styles.header}>
+        <ThemeSwitch />
+      </header>
       <main className={styles.main}>
         <div className={styles.column}>
           <ScrollTable

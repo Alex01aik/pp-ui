@@ -36,4 +36,11 @@ export default defineConfig({
       "@": resolve(__dirname, "lib"),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/global.css";`,
+      },
+    },
+  },
 });

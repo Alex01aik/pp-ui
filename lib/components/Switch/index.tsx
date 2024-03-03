@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SwitchProps } from "./props";
 import styles from "./styles.module.css";
-import "@/styles.css";
 
 const Switch: React.FC<SwitchProps> = ({
   value,

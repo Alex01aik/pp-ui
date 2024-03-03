@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
-import "@/styles.css";
 
 export type CodeInputProps = {
   value?: number;

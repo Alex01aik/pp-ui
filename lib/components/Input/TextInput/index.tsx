@@ -1,5 +1,4 @@
 import styles from "./styles.module.css";
-import "@/styles.css";
 
 export type TextInputProps = {
   field?: "input" | "textarea";

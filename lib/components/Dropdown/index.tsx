@@ -1,7 +1,6 @@
 import { useEffect, useRef, useCallback } from "react";
 import DropdownItem from "./DropdownItem";
 import { DropdownProps } from "./props";
-import "@/styles.css";
 
 const Dropdown: React.FC<DropdownProps> = ({
   options,

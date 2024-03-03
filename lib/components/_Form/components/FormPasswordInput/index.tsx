@@ -2,9 +2,8 @@ import { SVGProps } from "react";
 import PasswordInput from "@/components/Input/PasswordInput";
 import FormErrorMessage from "../FormErrorMessage";
 import { Controller, useFormContext } from "react-hook-form";
-import styles from "./styles.module.css";
-import "@/styles.css";
 import { TextInputProps } from "@/components/Input/TextInput";
+import styles from "./styles.module.css";
 
 export type FormPasswordInputProps = {
   name: string;

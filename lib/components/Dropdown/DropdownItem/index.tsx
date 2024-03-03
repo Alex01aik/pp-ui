@@ -2,7 +2,6 @@ import { useState } from "react";
 import Arrow from "@/icons/Arrow";
 import { DropdownItemProps } from "./props";
 import styles from "./styles.module.css";
-import "@/styles.css";
 
 const DropdownItem: React.FC<DropdownItemProps> = ({ option, itemProps }) => {
   const [isOpenDropDown, setIsOpenDropDown] = useState<boolean>(false);

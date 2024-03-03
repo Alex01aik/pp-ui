@@ -5,7 +5,6 @@ import { useForm, FormProvider, UseFormProps } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import styles from "./styles.module.css";
-import "@/styles.css";
 
 export type FormProps = {
   validationSchema?: yup.AnyObjectSchema;

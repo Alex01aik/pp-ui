@@ -2,7 +2,6 @@ import React from "react";
 import { useModal } from "../useModal";
 import styles from "./styles.module.css";
 import Close from "@/icons/Close";
-import "@/styles.css";
 
 const ModalBoundary: React.FC = () => {
   const modalManager = useModal();
