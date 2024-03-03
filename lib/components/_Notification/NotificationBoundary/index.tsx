@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { useNotification } from "../useNotification";
 import styles from "./styles.module.css";
 import Close from "@/icons/Close";
+import "@/styles.css";
 
 const NotificationBoundary: FC = () => {
   const notificationManager = useNotification();

@@ -2,13 +2,12 @@ import { SVGProps, useState } from "react";
 import EyeClose from "@/icons/EyeClose";
 import EyeOpen from "@/icons/EyeOpen";
 import styles from "./styles.module.css";
+import TextInput, { TextInputProps } from "../TextInput";
+import "@/styles.css";
 
 export type PasswordInputProps = {
   iconProps?: SVGProps<SVGSVGElement>;
-} & React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->;
+} & TextInputProps;
 
 const PasswordInput: React.FC<PasswordInputProps> = ({
   iconProps,
@@ -18,24 +17,19 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
 
   return (
     <div className={styles.passwordInput}>
+      <TextInput {...props} type={isHide ? "password" : "text"} />
       {isHide ? (
-        <>
-          <input {...props} type="password" />
-          <EyeOpen
-            {...iconProps}
-            className={`${styles.eye} ${iconProps?.className}`}
-            onClick={() => toggleIsHide((prev) => !prev)}
-          />
-        </>
+        <EyeOpen
+          {...iconProps}
+          className={`${styles.eye} ${iconProps?.className}`}
+          onClick={() => toggleIsHide((prev) => !prev)}
+        />
       ) : (
-        <>
-          <input {...props} type="text" />
-          <EyeClose
-            {...iconProps}
-            className={`${styles.eye} ${iconProps?.className}`}
-            onClick={() => toggleIsHide((prev) => !prev)}
-          />
-        </>
+        <EyeClose
+          {...iconProps}
+          className={`${styles.eye} ${iconProps?.className}`}
+          onClick={() => toggleIsHide((prev) => !prev)}
+        />
       )}
     </div>
   );

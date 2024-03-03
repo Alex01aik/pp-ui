@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SwitchProps } from "./props";
 import styles from "./styles.module.css";
+import "@/styles.css";
 
 const Switch: React.FC<SwitchProps> = ({
   value,
@@ -10,10 +11,6 @@ const Switch: React.FC<SwitchProps> = ({
 }) => {
   const [check, toggleCheck] = useState<boolean>(false);
   const [selectedValue, setSelectedValue] = useState<string>("");
-
-  const activeButtonStyles = (value: boolean) => ({
-    background: value ? "white" : "transparent",
-  });
 
   useEffect(() => {
     switch (true) {
@@ -31,19 +28,16 @@ const Switch: React.FC<SwitchProps> = ({
 
   return (
     <div
-      className={`${styles.switch} ${props.switchProps?.className}`}
       {...props.switchProps}
+      className={`${styles.switch} ${props.switchProps?.className}`}
       onClick={() => {
         if (!values) {
           toggleCheck(!check);
           onChange?.(!check);
         }
       }}
-      style={{
-        background: !values && check ? "gray" : "lightgray",
-        ...props.switchProps?.style,
-        width: values ? "100%" : "var(--switch-w)",
-      }}
+      data-selected={(!values && check).toString()}
+      data-switch-type={values ? "values" : "simple"}
     >
       {values ? (
         <>
@@ -52,10 +46,7 @@ const Switch: React.FC<SwitchProps> = ({
               key={index}
               {...props.buttonProps}
               className={`${styles.switchButton} ${props.buttonProps?.className}`}
-              style={{
-                ...props.buttonProps?.style,
-                ...activeButtonStyles(value === selectedValue),
-              }}
+              data-active={value === selectedValue}
               onClick={() => {
                 setSelectedValue(value);
                 onChange?.(value);
@@ -70,12 +61,12 @@ const Switch: React.FC<SwitchProps> = ({
           <div
             {...props.buttonProps}
             className={`${styles.switchButton} ${props.buttonProps?.className}`}
-            style={activeButtonStyles(!check)}
+            data-active={!check}
           />
           <div
             {...props.buttonProps}
             className={`${styles.switchButton} ${props.buttonProps?.className}`}
-            style={activeButtonStyles(check)}
+            data-active={check}
           />
         </>
       )}

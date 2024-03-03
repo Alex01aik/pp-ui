@@ -8,16 +8,42 @@
     height: var(--switch-h);
     border-radius: calc(var(--switch-h) / 2);
     cursor: pointer;
-    background: gray;
+    background: var(--switch-background);
     font-size: calc(1rem - 2px);
+    width: var(--switch-width);
 }
 
 .switchButton {
-    height: var(--button-h);
     border-radius: calc(var(--button-h) / 2);
     margin: 2px;
     padding: 2px;
     text-align: center;
     vertical-align: middle;
     flex: 1;
+    background: var(--bg-color);
 }
+
+[data-active="true"]{
+    background: var(--bg-color);
+}
+
+[data-active="false"]{
+    background: transparent;
+}
+
+[data-selected="true"]{
+    --switch-background: var(--body-bg-color);
+}
+
+[data-selected="false"]{
+    --switch-background: var(--button-bg-color);
+}
+
+[data-switch-type="simple"]{
+    --switch-width: var(--switch-w);
+}
+
+[data-switch-type="values"]{
+    --switch-width: fit-content;
+}
+

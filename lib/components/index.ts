@@ -1,4 +1,3 @@
-export { default as Test } from "./Test";
 // button
 export { default as Button } from "./Button";
 export type { ButtonProps } from "./Button";
@@ -53,7 +52,7 @@ export type { TableColumnFormat } from "./_Table/types/TableColumnFormat";
 //  input
 export { default as CodeInput } from "./Input/CodeInput";
 export type { CodeInputProps } from "./Input/CodeInput";
-export { default as FileInput } from "./Input/FileInput";
+export { default as FileInput, FileInputType } from "./Input/FileInput";
 export type { FileInputProps } from "./Input/FileInput";
 export { default as PasswordInput } from "./Input/PasswordInput";
 export type { PasswordInputProps } from "./Input/PasswordInput";

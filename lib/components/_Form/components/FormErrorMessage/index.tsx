@@ -1,5 +1,6 @@
 import ErrorMessage from "@/components/ErrorMessage";
 import { useFormContext } from "react-hook-form";
+import "@/styles.css";
 
 export type FormErrorMessageProps = {
   name: string;

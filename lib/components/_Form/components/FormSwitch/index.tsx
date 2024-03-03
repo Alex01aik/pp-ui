@@ -1,6 +1,7 @@
 import Switch from "@/components/Switch";
 import { Controller, useFormContext } from "react-hook-form";
 import { SwitchProps } from "@/components/Switch/props";
+import "@/styles.css";
 
 export type FormSwitchProps = {
   name: string;

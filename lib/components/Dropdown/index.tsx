@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback } from "react";
 import DropdownItem from "./DropdownItem";
 import { DropdownProps } from "./props";
+import "@/styles.css";
 
 const Dropdown: React.FC<DropdownProps> = ({
   options,
@@ -37,7 +38,13 @@ const Dropdown: React.FC<DropdownProps> = ({
   }, [handleScroll]);
 
   return (
-    <div {...props} ref={dropdownRef}>
+    <div
+      {...props}
+      ref={dropdownRef}
+      style={{
+        zIndex: 1,
+      }}
+    >
       {options.map((option, index) => (
         <DropdownItem key={index} option={option} itemProps={itemProps} />
       ))}

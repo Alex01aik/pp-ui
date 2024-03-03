@@ -1,6 +1,8 @@
 import { ChangeEvent, SVGProps, useState } from "react";
 import File from "@/icons/File";
 import styles from "./styles.module.css";
+import TextInput, { TextInputProps } from "../TextInput";
+import "@/styles.css";
 
 export enum FileInputType {
   ALL_FILES = "ALL_FILES",
@@ -12,10 +14,7 @@ export enum FileInputType {
 export type FileInputProps = {
   type?: FileInputType;
   iconProps?: SVGProps<SVGSVGElement>;
-} & React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->;
+} & TextInputProps;
 
 const FileInput: React.FC<FileInputProps> = ({ type, iconProps, ...props }) => {
   // TODO
@@ -60,25 +59,28 @@ const FileInput: React.FC<FileInputProps> = ({ type, iconProps, ...props }) => {
             )}
           </div>
           <div className={`${styles.fileInputs}`}>
-            <label className={`${styles.fileInputLabel}`} htmlFor="textInput">
-              <input
+            <label htmlFor="textInput">
+              <TextInput
                 type="text"
                 id="textInput"
-                className={`${styles.textInput}`}
                 value={filePath}
-                onChange={handleFilePathChange}
+                onChange={handleFilePathChange as any}
                 {...props}
               />
             </label>
-            <label className={`${styles.fileInputLabel}`} htmlFor="fileInput">
+            <label
+              id="allFileLabel"
+              className={`${styles.buttonFileLabel}`}
+              htmlFor="buttonFile"
+            >
               <input
                 type="file"
-                id="fileInput"
-                className={`${styles.fileInput}`}
+                id="buttonFile"
+                className={`${styles.buttonFile}`}
                 onChange={handleFileChange}
                 {...props}
               />
-              <span className={`${styles.fileInputTitle}`}>Select file</span>
+              <span className={styles.button}>Select file</span>
             </label>
           </div>
         </div>
@@ -111,12 +113,11 @@ const FileInput: React.FC<FileInputProps> = ({ type, iconProps, ...props }) => {
             )}
           </div>
           <label className={`${styles.fileInputLabel}`} htmlFor="textInput">
-            <input
+            <TextInput
               type="text"
               id="textInput"
-              className={`${styles.textInput}`}
               value={filePath}
-              onChange={handleFilePathChange}
+              onChange={handleFilePathChange as any}
               {...props}
             />
           </label>
@@ -126,18 +127,18 @@ const FileInput: React.FC<FileInputProps> = ({ type, iconProps, ...props }) => {
     default:
       return (
         <label
-          id="allFileLabel"
-          className={`${styles.allFileLabel}`}
-          htmlFor="allFile"
+          id="buttonFileLabel"
+          className={`${styles.buttonFileLabel}`}
+          htmlFor="buttonFile"
         >
           <input
             type="file"
-            id="allFile"
-            className={`${styles.allFile}`}
+            id="buttonFile"
+            className={`${styles.buttonFile}`}
             onChange={handleFileChange}
             {...props}
           />
-          <span>Select file...</span>
+          <span className={styles.button}>Select file...</span>
         </label>
       );
   }

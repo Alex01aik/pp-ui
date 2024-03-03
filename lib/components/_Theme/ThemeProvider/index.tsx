@@ -1,26 +1,44 @@
-import { PropsWithChildren, useState } from "react";
+import { PropsWithChildren, createContext, useState } from "react";
+import { ThemeContextType } from "../types/ThemeContextType";
 import "./styles.css";
+import { Theme } from "../types/Theme";
+import "@/styles.css";
 
-export type ThemeProviderProps = PropsWithChildren & {};
+export const ThemeContext = createContext<ThemeContextType<any> | undefined>(
+  undefined
+);
 
-enum Theme {
-  light = "light",
-  dark = "dark",
-}
+export type ThemeProviderProps<T> = PropsWithChildren & {
+  themeKeys?: string[] | T;
+};
 
-const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState(Theme.dark);
+const ThemeProvider = <T,>({
+  children,
+  themeKeys,
+  ...props
+}: ThemeProviderProps<T>) => {
+  const [theme, setTheme] = useState<string | T>(
+    typeof themeKeys === "undefined"
+      ? Theme.light
+      : Array.isArray(themeKeys)
+        ? themeKeys[0]
+        : (Object.values(themeKeys as any)?.[0] as T)
+  );
+
+  const changeTheme = (key: string | T) => {
+    setTheme(key);
+  };
+
+  const contextValue: ThemeContextType<T> = {
+    changeTheme,
+    theme,
+  };
   return (
-    <div id="root" data-theme={theme}>
-      <button
-        onClick={() =>
-          setTheme(theme === Theme.light ? Theme.dark : Theme.light)
-        }
-      >
-        test
-      </button>
-      {children}
-    </div>
+    <ThemeContext.Provider {...props} value={contextValue}>
+      <div id="theme" data-theme={theme}>
+        {children}
+      </div>
+    </ThemeContext.Provider>
   );
 };
 

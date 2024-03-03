@@ -1,4 +1,5 @@
 import styles from "./styles.module.css";
+import "@/styles.css";
 
 export type ErrorMessageProps = {} & React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLSpanElement>,

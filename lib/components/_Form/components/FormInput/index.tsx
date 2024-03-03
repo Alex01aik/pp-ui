@@ -1,18 +1,12 @@
 import FormErrorMessage from "../FormErrorMessage";
 import { Controller, useFormContext } from "react-hook-form";
 import styles from "./styles.module.css";
+import TextInput, { TextInputProps } from "@/components/Input/TextInput";
+import "@/styles.css";
 
 export type FormInputProps = {
   name: string;
-  field?: "input" | "textarea";
-} & React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
-> &
-  React.DetailedHTMLProps<
-    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-    HTMLTextAreaElement
-  >;
+} & TextInputProps;
 
 const FormInput: React.FC<FormInputProps> = (props) => {
   const { control } = useFormContext();
@@ -23,19 +17,11 @@ const FormInput: React.FC<FormInputProps> = (props) => {
       control={control}
       render={(renderProps) => (
         <div className={`${styles.inputWrapper}`}>
-          {props.field === "textarea" ? (
-            <textarea
-              {...props}
-              value={renderProps.field.value ?? ""}
-              onChange={renderProps.field.onChange}
-            />
-          ) : (
-            <input
-              {...props}
-              value={renderProps.field.value ?? ""}
-              onChange={renderProps.field.onChange}
-            />
-          )}
+          <TextInput
+            {...props}
+            value={renderProps.field.value ?? ""}
+            onChange={renderProps.field.onChange}
+          />
           <FormErrorMessage name={props.name} />
         </div>
       )}

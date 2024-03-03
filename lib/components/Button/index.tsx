@@ -1,4 +1,5 @@
 import styles from "./styles.module.css";
+import "@/styles.css";
 
 export type ButtonProps = {} & React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,

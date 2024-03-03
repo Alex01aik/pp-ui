@@ -2,6 +2,7 @@ import { useEffect, useRef, useCallback } from "react";
 import Table from "../Table";
 import { ScrollTableProps } from "./props";
 import styles from "./styles.module.css";
+import "@/styles.css";
 
 const ScrollTable: React.FC<ScrollTableProps> = ({
   onUpdateItems,

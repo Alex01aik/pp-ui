@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Close from "@/icons/Close";
 import Dropdown from "../Dropdown";
 import styles from "./styles.module.css";
+import "@/styles.css";
 
 export type OptionType = {
   value: string;
@@ -159,49 +160,47 @@ const Select: React.FC<SelectProps> = ({
           }}
         />
       </div>
-      <div>
-        {isOpenDropDown && (
-          <Dropdown
-            options={
-              isFilterSelected
-                ? (!isMulty && isAllowEmpty ? [{ value: "" }, ...items] : items)
-                    .filter((i) => i.value.includes(search))
-                    .filter(
-                      (item) =>
-                        !selectedItems.find((i) => i.value === item.value)
-                    )
-                : (!isMulty && isAllowEmpty
-                    ? [{ value: "" }, ...items]
-                    : items
-                  ).filter((i) => i.value.includes(search))
-            }
-            onUpdateOptions={onUpdateOptions}
-            className={`${styles.selectDropdown}`}
-            itemProps={{
-              className: `${styles.selectDropdownItem}`,
-              active: (item) =>
-                Boolean(selectedItems.find((i) => i.value === item.value)),
-              activeStyle: {
-                background: "gainsboro",
-              },
-              onClick: (_, item) => {
-                if (!selectedItems.find((i) => item.value === i.value)) {
-                  if (isMulty) {
-                    setSelectedItems([...selectedItems, item]);
-                    props.onSelect?.([...selectedItems, item]);
-                  } else {
-                    setSelectedItems([item]);
-                    props.onSelect?.(item);
-                  }
 
-                  setSearch("");
-                  setIsOpenDropDown(false);
+      {isOpenDropDown && (
+        <Dropdown
+          options={
+            isFilterSelected
+              ? (!isMulty && isAllowEmpty ? [{ value: "" }, ...items] : items)
+                  .filter((i) => i.value.includes(search))
+                  .filter(
+                    (item) => !selectedItems.find((i) => i.value === item.value)
+                  )
+              : (!isMulty && isAllowEmpty
+                  ? [{ value: "" }, ...items]
+                  : items
+                ).filter((i) => i.value.includes(search))
+          }
+          onUpdateOptions={onUpdateOptions}
+          className={`${styles.selectDropdown}`}
+          itemProps={{
+            className: `${styles.selectDropdownItem}`,
+            active: (item) =>
+              Boolean(selectedItems.find((i) => i.value === item.value)),
+            activeStyle: {
+              background: "gainsboro",
+            },
+            onClick: (_, item) => {
+              if (!selectedItems.find((i) => item.value === i.value)) {
+                if (isMulty) {
+                  setSelectedItems([...selectedItems, item]);
+                  props.onSelect?.([...selectedItems, item]);
+                } else {
+                  setSelectedItems([item]);
+                  props.onSelect?.(item);
                 }
-              },
-            }}
-          />
-        )}
-      </div>
+
+                setSearch("");
+                setIsOpenDropDown(false);
+              }
+            },
+          }}
+        />
+      )}
     </div>
   );
 };

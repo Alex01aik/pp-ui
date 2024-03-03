@@ -3,6 +3,7 @@ import TableItem from "../TableItem";
 import TableHeader from "../TableHeader";
 import { TableProps } from "./props";
 import styles from "./styles.module.css";
+import "@/styles.css";
 
 const Table: React.FC<TableProps> = ({
   items,

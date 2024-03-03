@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
+import "@/styles.css";
 
 export type CodeInputProps = {
   value?: number;
@@ -40,7 +41,16 @@ const CodeInput: React.FC<CodeInputProps> = ({
     newArray[index] = inputValue;
 
     setCodeArr(newArray);
-    onChange?.(newArray.join(""));
+    if (onChange) {
+      let resString: string = "";
+      for (let i = 0; i <= index; i++) {
+        resString =
+          typeof newArray[i] === "undefined"
+            ? resString + " "
+            : resString + newArray[i];
+      }
+      onChange(resString);
+    }
 
     if (
       index < length - 1 &&

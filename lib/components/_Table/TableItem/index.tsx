@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { TableItemProps } from "./props";
 import styles from "./styles.module.css";
+import "@/styles.css";
 
 const TableItem: React.FC<TableItemProps> = ({
   item,
@@ -35,8 +36,8 @@ const TableItem: React.FC<TableItemProps> = ({
                     return !showAdditionRow;
                   })
                 : typeof item[key] === "object"
-                ? JSON.stringify(item[key])
-                : item[key]?.toString() ?? ""}
+                  ? JSON.stringify(item[key])
+                  : item[key]?.toString() ?? ""}
             </td>
           );
         })}

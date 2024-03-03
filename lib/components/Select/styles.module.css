@@ -8,11 +8,11 @@
     align-items: center;
     gap: 4px;
     width: 100%;
-    border: 1px solid gray;
+    border: 1px solid var(--border-color);
     border-radius: 2px;
-    padding: 0.25rem 12px;
+    padding: 0.5rem 12px;
     cursor: pointer;
-    min-height: 2rem;
+    min-height: calc(2rem + 4px);
 }
 
 .selectInput {
@@ -37,10 +37,10 @@
 }
 
 .selectDropdown {
-    border: 1px solid gray;
+    border: 1px solid var(--border-color);
     border-radius: 2px;
-    width: 320px;
-    background: white;
+    min-width: 320px;
+    background: var(--bg-color);
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -59,11 +59,11 @@
 }
 
 .selectDropdownItem:hover {
-    background: gray;
+    background: var(--button-bg-color);
 }
 
 .selectDropdownItem:active {
-    background: gainsboro;
+    background: var(--button-bg-color);
 }
 
 .dropArrow {
@@ -89,4 +89,6 @@
     width: auto;
     border: none;
     outline: none;
+    padding: 1px 0;
+    flex: auto;
 }

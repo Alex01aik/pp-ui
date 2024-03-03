@@ -2,6 +2,7 @@ import Select, { SelectProps } from "@/components/Select";
 import FormErrorMessage from "../FormErrorMessage";
 import { Controller, useFormContext } from "react-hook-form";
 import styles from "./styles.module.css";
+import "@/styles.css";
 
 export type FormSelectProps = {
   name: string;

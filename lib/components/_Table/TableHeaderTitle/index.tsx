@@ -3,6 +3,7 @@ import Arrow from "@/icons/Arrow";
 import { TableHeaderTitleProps } from "./props";
 import { SortRules } from "../types/SortRules";
 import styles from "./styles.module.css";
+import "@/styles.css";
 
 const TableHeaderTitle: React.FC<TableHeaderTitleProps> = ({
   title,

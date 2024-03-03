@@ -4,7 +4,7 @@
     align-items: center;
     gap: 4px;
     width: 100%;
-    border: 1px solid gray;
+    border: 1px solid var(--border-color);
     border-radius: 2px;
     padding: 0.5rem 12px;
 }
@@ -15,6 +15,7 @@
     width: 100%;
     border: none;
     outline: none;
+    background: transparent;
 }
 
 .searchIcon {
